@@ -1,4 +1,4 @@
-package e.lenovo.soccerapp.ui.slideshow;
+package e.lenovo.soccerapp.ui.athlete;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,17 +12,17 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import e.lenovo.soccerapp.R;
 
-public class SlideshowFragment extends Fragment {
+public class AthleteFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private AthleteViewModel athleteViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        athleteViewModel =
+                new ViewModelProvider(this).get(AthleteViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_athlete, container, false);
+        final TextView textView = root.findViewById(R.id.text_athlete);
+        athleteViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -9,16 +9,23 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_athletes"
             android:icon="@drawable/ic_athlete"
             android:title="@string/menu_athletes" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_teams"
             android:icon="@drawable/ic_teams"
             android:title="@string/menu_teams" />
         <item
             android:id="@+id/nav_sports"
             android:icon="@drawable/ic_sports"
             android:title="@string/menu_sports" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="@string/about" />
     </group>
 </menu>

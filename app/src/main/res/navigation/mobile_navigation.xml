@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="e.lenovo.soccerapp.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_athlete"
+        android:name="e.lenovo.soccerapp.ui.athlete.AthleteFragment"
+        android:label="@string/menu_athletes"
+        tools:layout="@layout/fragment_athlete" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="e.lenovo.soccerapp.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_team"
+        android:name="e.lenovo.soccerapp.ui.team.TeamFragment"
+        android:label="@string/menu_teams"
+        tools:layout="@layout/fragment_teams" />
 </navigation>
