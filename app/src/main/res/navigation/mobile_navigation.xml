@@ -9,17 +9,53 @@
         android:id="@+id/nav_home"
         android:name="e.lenovo.soccerapp.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_team"
+            app:destination="@id/nav_team" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_athlete"
+            app:destination="@id/nav_athlete" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_athlete"
         android:name="e.lenovo.soccerapp.ui.athlete.AthleteFragment"
         android:label="@string/menu_athletes"
-        tools:layout="@layout/fragment_athlete" />
+        tools:layout="@layout/fragment_athlete" >
+        <action
+            android:id="@+id/action_nav_athlete_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_athlete_to_nav_team"
+            app:destination="@id/nav_team" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_team"
         android:name="e.lenovo.soccerapp.ui.team.TeamFragment"
         android:label="@string/menu_teams"
-        tools:layout="@layout/fragment_teams" />
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_nav_team_to_nav_athlete"
+            app:destination="@id/nav_athlete" />
+        <action
+            android:id="@+id/action_nav_team_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sports"
+        android:name="e.lenovo.soccerapp.ui.sports.SportsFragment"
+        android:label="@string/menu_sports"
+        tools:layout="@layout/fragment_sports" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="e.lenovo.soccerapp.ui.about.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" >
+    </fragment>
+
 </navigation>
