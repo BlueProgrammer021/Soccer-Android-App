@@ -14,4 +14,12 @@
     <string name="menu_teams">Teams</string>
     <string name="menu_athletes">Athletes</string>
     <string name="about">About</string>
+
+    <string name="textview_athletes">TextView</string>
+    <string name="btn_add_athlete">Add Athlete</string>
+    <string name="btn_delete_athlete">Delete Athlete</string>
+    <string name="btn_update_athlete">Update Athlete</string>
+    <string name="btn_view_athletes">View Athletes</string>
+    <string name="here_you_can_add_delete_or_update_n_details_of_an_athlete">Here you can add, delete or update \n details of an athlete</string>
+
 </resources>

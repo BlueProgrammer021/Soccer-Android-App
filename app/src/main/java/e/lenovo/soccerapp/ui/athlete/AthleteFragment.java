@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import e.lenovo.soccerapp.R;
+import e.lenovo.soccerapp.ui.sports.SportsViewModel;
 
 public class AthleteFragment extends Fragment {
 
@@ -29,5 +30,12 @@ public class AthleteFragment extends Fragment {
             }
         });
         return root;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        athleteViewModel = new ViewModelProvider(this).get(AthleteViewModel.class);
+        // TODO: Use the ViewModel
     }
 }

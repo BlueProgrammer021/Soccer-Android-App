@@ -32,22 +32,4 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
-
-    public void onViewCreated(@NonNull View view, @NonNull Bundle savedInstanceState) {
-        view.findViewById(R.id.nav_athletes).setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_athlete);
-        });
-
-        view.findViewById(R.id.nav_teams).setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_team);
-        });
-
-        view.findViewById(R.id.nav_sports).setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_sports);
-        });
-
-        view.findViewById(R.id.nav_about).setOnClickListener(v -> {
-            Navigation.findNavController(view).navigate(R.id.action_nav_home_to_nav_about);
-        });
-    }
 }
