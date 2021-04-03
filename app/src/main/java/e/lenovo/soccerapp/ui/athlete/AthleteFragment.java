@@ -22,13 +22,13 @@ public class AthleteFragment extends Fragment {
         athleteViewModel =
                 new ViewModelProvider(this).get(AthleteViewModel.class);
         View root = inflater.inflate(R.layout.fragment_athlete, container, false);
-        final TextView textView = root.findViewById(R.id.text_athlete);
+        /*final TextView textView = root.findViewById(R.id.text_athlete);
         athleteViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
-        });
+        });*/
         return root;
     }
 
