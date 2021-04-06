@@ -22,5 +22,8 @@
     <string name="btn_view_athletes">View Athletes</string>
     <string name="here_you_can_add_delete_or_update_n_details_of_an_athlete">Here you can add, delete or update \n details of an athlete</string>
     <string name="logs">Log History</string>
+    <string name="menu_matches">Matches</string>
+    <string name="text_matches">Hello</string>
+    <string name="menu_more">More</string>
 
 </resources>
