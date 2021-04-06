@@ -9,8 +9,7 @@ public class AthleteViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
     public AthleteViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+
     }
 
     public LiveData<String> getText() {

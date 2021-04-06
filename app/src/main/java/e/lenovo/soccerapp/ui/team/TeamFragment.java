@@ -18,18 +18,9 @@ public class TeamFragment extends Fragment {
     private TeamViewModel teamViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        teamViewModel =
-                new ViewModelProvider(this).get(TeamViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_teams, container, false);
-        final TextView textView = root.findViewById(R.id.text_team);
-        teamViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //teamViewModel = new ViewModelProvider(this).get(TeamViewModel.class);
+        return inflater.inflate(R.layout.fragment_teams, container, false);
     }
 
     @Override

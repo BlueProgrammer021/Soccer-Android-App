@@ -18,18 +18,9 @@ public class AthleteFragment extends Fragment {
     private AthleteViewModel athleteViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-            ViewGroup container, Bundle savedInstanceState) {
-        athleteViewModel =
-                new ViewModelProvider(this).get(AthleteViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_athlete, container, false);
-        /*final TextView textView = root.findViewById(R.id.text_athlete);
-        athleteViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });*/
-        return root;
+                             @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        //athleteViewModel = new ViewModelProvider(this).get(AthleteViewModel.class);
+        return inflater.inflate(R.layout.fragment_athlete, container, false);
     }
 
     @Override
