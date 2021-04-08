@@ -2,9 +2,11 @@ package e.lenovo.soccerapp;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "sports")
+@Entity(tableName = "sports",
+        indices = {@Index(value = {"sid"}, unique = true)})
 class Sports
 {
     @PrimaryKey

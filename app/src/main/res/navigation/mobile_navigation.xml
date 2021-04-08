@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_team"
-            app:destination="@id/nav_team" />
+            app:destination="@id/nav_teams" />
         <action
             android:id="@+id/action_nav_home_to_nav_athlete"
-            app:destination="@id/nav_athlete" />
+            app:destination="@id/nav_athletes" />
         <action
             android:id="@+id/action_nav_home_to_nav_about"
             app:destination="@id/nav_about" />
@@ -25,7 +25,7 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_athlete"
+        android:id="@+id/nav_athletes"
         android:name="e.lenovo.soccerapp.ui.athlete.AthleteFragment"
         android:label="@string/menu_athletes"
         tools:layout="@layout/fragment_athlete" >
@@ -34,7 +34,7 @@
             app:destination="@id/nav_home" />
         <action
             android:id="@+id/action_nav_athlete_to_nav_team"
-            app:destination="@id/nav_team" />
+            app:destination="@id/nav_teams" />
         <action
             android:id="@+id/action_nav_athlete_to_nav_about"
             app:destination="@id/nav_about" />
@@ -44,13 +44,13 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_team"
+        android:id="@+id/nav_teams"
         android:name="e.lenovo.soccerapp.ui.team.TeamFragment"
         android:label="@string/menu_teams"
         tools:layout="@layout/fragment_teams" >
         <action
             android:id="@+id/action_nav_team_to_nav_athlete"
-            app:destination="@id/nav_athlete" />
+            app:destination="@id/nav_athletes" />
         <action
             android:id="@+id/action_nav_team_to_nav_home"
             app:destination="@id/nav_home" />
@@ -72,10 +72,10 @@
             app:destination="@id/nav_home" />
         <action
             android:id="@+id/action_nav_sports_to_nav_team"
-            app:destination="@id/nav_team" />
+            app:destination="@id/nav_teams" />
         <action
             android:id="@+id/action_nav_sports_to_nav_athlete"
-            app:destination="@id/nav_athlete" />
+            app:destination="@id/nav_athletes" />
         <action
             android:id="@+id/action_nav_sports_to_nav_about"
             app:destination="@id/nav_about" />
@@ -91,12 +91,31 @@
             app:destination="@id/nav_home" />
         <action
             android:id="@+id/action_nav_about_to_nav_team"
-            app:destination="@id/nav_team" />
+            app:destination="@id/nav_teams" />
         <action
             android:id="@+id/action_nav_about_to_nav_athlete"
-            app:destination="@id/nav_athlete" />
+            app:destination="@id/nav_athletes" />
         <action
             android:id="@+id/action_nav_about_to_nav_sports"
+            app:destination="@id/nav_sports" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_matches"
+        android:name="e.lenovo.soccerapp.ui.matches.MatchesFragment"
+        android:label="@string/menu_matches"
+        tools:layout="@layout/fragment_matches" >
+        <action
+            android:id="@+id/action_nav_matches_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_matches_to_nav_team"
+            app:destination="@id/nav_teams" />
+        <action
+            android:id="@+id/action_nav_matches_to_nav_athlete"
+            app:destination="@id/nav_athletes" />
+        <action
+            android:id="@+id/action_nav_matches_to_nav_sports"
             app:destination="@id/nav_sports" />
     </fragment>
 

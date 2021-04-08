@@ -3,9 +3,11 @@ package e.lenovo.soccerapp;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "athletes", foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "sid", onDelete = 5)})
+@Entity(tableName = "athletes",
+        foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "a_sid", onDelete = 5)})
 class Athletes
 {
     @PrimaryKey
@@ -19,7 +21,7 @@ class Athletes
     private String athleteTown;
     @ColumnInfo(name = "athlete_country")
     private String athleteCountry;
-    @ColumnInfo(name = "sid")
+    @ColumnInfo(name = "a_sid")
     private int sportId;
 
     public int getAthleteId() {
