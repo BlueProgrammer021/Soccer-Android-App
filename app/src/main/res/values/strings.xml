@@ -25,5 +25,14 @@
     <string name="menu_matches">Matches</string>
     <string name="text_matches">Hello</string>
     <string name="menu_more">More</string>
+    <string name="athlete_last_name">Athlete Last Name</string>
+    <string name="teams_desc">Here you can add, delete or update the details of a team</string>
+    <string name="btn_update_team">Update Team</string>
+    <string name="btn_add_team">Add team</string>
+    <string name="btn_delete_team">Delete team</string>
+    <string name="btn_add_sport">Add sport</string>
+    <string name="btn_delete_sport">Delete sport</string>
+    <string name="btn_update_sport">Update sport</string>
+    <string name="sports_desc">Here you can add, delete and update the details of a team</string>
 
 </resources>
