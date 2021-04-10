@@ -8,6 +8,31 @@
     tools:context=".ui.athlete.AthleteFragment" >
 
     <Button
+        android:id="@+id/btn_search_athlete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_search"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete_athlete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toEndOf="@+id/athlete_search"
+        app:layout_constraintTop_toBottomOf="@+id/athletes_view" />
+
+    <EditText
+        android:id="@+id/athlete_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/athlete_search"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_athlete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/athletes_view"
+        app:layout_constraintVertical_bias="0.455"
+        android:autofillHints="" />
+
+    <Button
         android:id="@+id/btn_add_athlete"
         android:layout_width="145dp"
         android:layout_height="48dp"

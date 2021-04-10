@@ -34,5 +34,18 @@
     <string name="btn_delete_sport">Delete sport</string>
     <string name="btn_update_sport">Update sport</string>
     <string name="sports_desc">Here you can add, delete and update the details of a team</string>
+    <string name="athlete_id">Athlete Id</string>
+    <string name="athlete_fname">Athlete First Name</string>
+    <string name="athlete_country">Athlete Country</string>
+    <string name="athlete_town">Athlete Town</string>
+    <string name="sport_id">Sport Id</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_cnl">Cancel</string>
+    <string name="btn_del">Delete</string>
+    <string name="btn_search">Search</string>
+    <string name="athlete_search">Search Athlete</string>
+    <string name="sport_search">Search Sport</string>
+    <string name="team_search">Search Team</string>
+    <string name="btn_upd">Update</string>
 
 </resources>

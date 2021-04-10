@@ -1,9 +1,8 @@
-package e.lenovo.soccerapp;
+package e.lenovo.soccerapp.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "athletes",

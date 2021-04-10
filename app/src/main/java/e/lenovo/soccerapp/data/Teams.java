@@ -1,4 +1,4 @@
-package e.lenovo.soccerapp;
+package e.lenovo.soccerapp.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

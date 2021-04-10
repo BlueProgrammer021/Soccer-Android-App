@@ -19,7 +19,7 @@ public class AthleteFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        //athleteViewModel = new ViewModelProvider(this).get(AthleteViewModel.class);
+        athleteViewModel = new ViewModelProvider(this).get(AthleteViewModel.class);
         return inflater.inflate(R.layout.fragment_athlete, container, false);
     }
 
