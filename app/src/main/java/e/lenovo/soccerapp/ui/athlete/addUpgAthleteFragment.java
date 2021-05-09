@@ -44,21 +44,19 @@ public class addUpgAthleteFragment extends Fragment {
             || country.getText() == null || town.getText() == null || sportId.getSelectedItem() == null) {
                 Toast.makeText(getActivity(), "Empty Fields", Toast.LENGTH_LONG).show();
             } else {
-                Athletes ath = new Athletes();
                 try {
+                    Athletes ath = new Athletes();
                     ath.setAthleteId(Integer.parseInt(id.getText().toString()));
                     ath.setAthleteFirstName(fname.getText().toString());
                     ath.setAthleteLastName(lname.getText().toString());
                     ath.setAthleteCountry(country.getText().toString());
                     ath.setAthleteTown(town.getText().toString());
                     ath.setSportId(Integer.parseInt(sportId.getSelectedItem().toString()));
+                    HomeActivity.INSTANCE.athletesDao().insertAthlete(ath);
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), e.toString(), Toast.LENGTH_LONG).show();
                 }
-
-                HomeActivity.INSTANCE.athletesDao().insertAthlete(ath);
-
-                //saveAthlete(ath);
+                Toast.makeText(getActivity(), "Successfully Added", Toast.LENGTH_LONG).show();
             }
         });
 
