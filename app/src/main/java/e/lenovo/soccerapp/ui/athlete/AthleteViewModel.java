@@ -6,13 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 public class AthleteViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
-
     public AthleteViewModel() {
 
-    }
-
-    public LiveData<String> getText() {
-        return mText;
     }
 }

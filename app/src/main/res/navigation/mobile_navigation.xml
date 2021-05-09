@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_nav_athlete_to_nav_sports"
             app:destination="@id/nav_sports" />
+        <action
+            android:id="@+id/action_nav_athletes_to_addUpgAthleteFragment"
+            app:destination="@id/addUpgAthleteFragment" />
     </fragment>
 
     <fragment
@@ -60,6 +63,9 @@
         <action
             android:id="@+id/action_nav_team_to_nav_sports"
             app:destination="@id/nav_sports" />
+        <action
+            android:id="@+id/action_nav_teams_to_addUpgTeamFragment"
+            app:destination="@id/addUpgTeamFragment" />
     </fragment>
 
     <fragment
@@ -79,6 +85,9 @@
         <action
             android:id="@+id/action_nav_sports_to_nav_about"
             app:destination="@id/nav_about" />
+        <action
+            android:id="@+id/action_nav_sports_to_addUpgSportFragment"
+            app:destination="@id/addUpgSportFragment" />
     </fragment>
 
     <fragment
@@ -117,6 +126,33 @@
         <action
             android:id="@+id/action_nav_matches_to_nav_sports"
             app:destination="@id/nav_sports" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpgAthleteFragment"
+        android:name="e.lenovo.soccerapp.ui.athlete.addUpgAthleteFragment"
+        android:label="fragment_add_upg_athlete"
+        tools:layout="@layout/fragment_add_upg_athlete" >
+        <action
+            android:id="@+id/action_addUpgAthleteFragment_to_nav_athletes"
+            app:destination="@id/nav_athletes" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpgSportFragment"
+        android:name="e.lenovo.soccerapp.ui.sports.addUpgSportFragment"
+        android:label="fragment_add_upg_sport"
+        tools:layout="@layout/fragment_add_upg_sport" >
+        <action
+            android:id="@+id/action_addUpgSportFragment_to_nav_sports"
+            app:destination="@id/nav_sports" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpgTeamFragment"
+        android:name="e.lenovo.soccerapp.ui.team.addUpgTeamFragment"
+        android:label="fragment_add_upg_team"
+        tools:layout="@layout/fragment_add_upg_team" >
+        <action
+            android:id="@+id/action_addUpgTeamFragment_to_nav_teams"
+            app:destination="@id/nav_teams" />
     </fragment>
 
 </navigation>

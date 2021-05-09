@@ -13,6 +13,8 @@ class Teams
     private int teamId;
     @ColumnInfo(name = "team_name")
     private String teamName;
+    @ColumnInfo(name = "team_arena")
+    private String teamArena;
     @ColumnInfo(name = "team_court")
     private String teamCourt;
     @ColumnInfo(name = "team_town")
@@ -44,6 +46,10 @@ class Teams
     public String getTeamCourt() {
         return teamCourt;
     }
+
+    public String getTeamArena() { return teamArena; }
+
+    public void setTeamArena(String teamArena) { this.teamArena = teamArena; }
 
     public void setTeamCourt(String teamCourt) {
         this.teamCourt = teamCourt;

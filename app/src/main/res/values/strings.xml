@@ -39,7 +39,7 @@
     <string name="athlete_country">Athlete Country</string>
     <string name="athlete_town">Athlete Town</string>
     <string name="sport_id">Sport Id</string>
-    <string name="btn_add">Add</string>
+    <string name="btn_add">Confirm</string>
     <string name="btn_cnl">Cancel</string>
     <string name="btn_del">Delete</string>
     <string name="btn_search">Search</string>
@@ -47,5 +47,21 @@
     <string name="sport_search">Search Sport</string>
     <string name="team_search">Search Team</string>
     <string name="btn_upd">Update</string>
+    <string name="sport_name">Name</string>
+    <string name="sport_category">Category</string>
+    <string name="sport_gender">Gender</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="team_est">EST</string>
+    <string name="team_id">team ID</string>
+    <string name="team_country">Team Country</string>
+    <string name="team_name">Team Name</string>
+    <string name="team_arena">Team Arena</string>
+    <string name="team_town">Team Town</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string-array name="genders">
+        <item name="male" type="string">Male</item>
+        <item name="female" type="string">Female</item>
+    </string-array>
 
 </resources>

@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "athletes",
         foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "a_sid", onDelete = 5)})
+public
 class Athletes
 {
     @PrimaryKey

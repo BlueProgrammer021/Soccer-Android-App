@@ -10,6 +10,8 @@ import java.util.List;
 @Dao
 public interface AthletesDAO
 {
+    @Query("SELECT * FROM athletes")
+    public List<Athletes> getAllAthletes();
     @Query("SELECT * FROM athletes WHERE aid = :searchId")
     public List<Athletes> searchById(int searchId);
     @Insert
