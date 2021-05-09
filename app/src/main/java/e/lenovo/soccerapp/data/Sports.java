@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "sports",
         indices = {@Index(value = {"sid"}, unique = true)})
-class Sports
+public class Sports
 {
     @PrimaryKey
     @ColumnInfo(name = "sid")

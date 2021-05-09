@@ -28,12 +28,7 @@ public class addUpgTeamFragment extends Fragment {
         Button add = (Button) view.findViewById(R.id.btn_add);
         Button can = (Button) view.findViewById(R.id.btn_cnl);
 
-        can.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Navigation.findNavController(view).navigate(R.id.action_addUpgTeamFragment_to_nav_teams);
-            }
-        });
+        can.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.action_addUpgTeamFragment_to_nav_teams));
         return view;
     }
 }

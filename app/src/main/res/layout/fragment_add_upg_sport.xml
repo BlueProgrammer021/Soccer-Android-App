@@ -11,19 +11,21 @@
         android:id="@+id/sport_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/sport_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/sport_category"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/sport_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/sport_id"
         android:inputType="number"
@@ -32,7 +34,8 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="1.0"
+        android:importantForAutofill="no" />
 
     <Spinner
         android:id="@+id/sport_gender"
@@ -47,14 +50,15 @@
         android:id="@+id/sport_category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/sport_category"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/sport_gender"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btn_add"

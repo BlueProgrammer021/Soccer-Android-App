@@ -3,12 +3,13 @@ package e.lenovo.soccerapp.data;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "athletes",
-        foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "a_sid", onDelete = 5)})
-public
-class Athletes
+        indices = {@Index(value = {"aid"}, unique = true), @Index(value = {"sid"}, unique = true)},
+        foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "sid", onDelete = 5)})
+public class Athletes
 {
     @PrimaryKey
     @ColumnInfo(name = "aid")
@@ -21,7 +22,7 @@ class Athletes
     private String athleteTown;
     @ColumnInfo(name = "athlete_country")
     private String athleteCountry;
-    @ColumnInfo(name = "a_sid")
+    @ColumnInfo(name = "sid")
     private int sportId;
 
     public int getAthleteId() {
