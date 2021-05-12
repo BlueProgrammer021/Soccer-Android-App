@@ -1,5 +1,6 @@
 package e.lenovo.soccerapp.data;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
@@ -11,7 +12,13 @@ import java.util.List;
 public interface SportsDAO
 {
     @Query("SELECT * FROM sports WHERE sid = :searchId")
-    public List<Sports> searchById(int searchId);
+    public LiveData<List<Sports>> searchById(int searchId);
+    @Query("SELECT * FROM sports ORDER BY sid DESC")
+    public LiveData<List<Sports>> getAllSports();
+    @Query("SELECT sid FROM sports")
+    public List<Integer> getAllSidSports();
+    @Query("SELECT sport_name FROM sports")
+    public List<String> getAllSnameSports();
     @Insert
     public void insertSport(Sports sport);
     @Update

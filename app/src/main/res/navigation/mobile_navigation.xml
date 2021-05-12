@@ -126,6 +126,9 @@
         <action
             android:id="@+id/action_nav_matches_to_nav_sports"
             app:destination="@id/nav_sports" />
+        <action
+            android:id="@+id/action_nav_matches_to_addUpgMatchFragment"
+            app:destination="@id/addUpgMatchFragment" />
     </fragment>
     <fragment
         android:id="@+id/addUpgAthleteFragment"
@@ -153,6 +156,15 @@
         <action
             android:id="@+id/action_addUpgTeamFragment_to_nav_teams"
             app:destination="@id/nav_teams" />
+    </fragment>
+    <fragment
+        android:id="@+id/addUpgMatchFragment"
+        android:name="e.lenovo.soccerapp.ui.matches.addUpgMatchFragment"
+        android:label="fragment_add_upg_match"
+        tools:layout="@layout/fragment_add_upg_match" >
+        <action
+            android:id="@+id/action_addUpgMatchFragment_to_nav_matches"
+            app:destination="@id/nav_matches" />
     </fragment>
 
 </navigation>

@@ -20,8 +20,6 @@ class Teams
     private String teamArena;
     @ColumnInfo(name = "team_court")
     private String teamCourt;
-    @ColumnInfo(name = "team_town")
-    private String teamTown;
     @ColumnInfo(name = "team_country")
     private String teamCountry;
     @ColumnInfo(name = "sid")
@@ -55,14 +53,6 @@ class Teams
 
     public void setTeamCourt(String teamCourt) {
         this.teamCourt = teamCourt;
-    }
-
-    public String getTeamTown() {
-        return teamTown;
-    }
-
-    public void setTeamTown(String teamTown) {
-        this.teamTown = teamTown;
     }
 
     public String getTeamCountry() {

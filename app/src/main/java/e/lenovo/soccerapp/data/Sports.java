@@ -19,6 +19,13 @@ public class Sports
     @ColumnInfo(name = "sport_gender")
     private String gender;
 
+    public Sports(int sportId, String sportName, String sportCategory, String gender) {
+        this.sportId = sportId;
+        this.sportName = sportName;
+        this.sportCategory = sportCategory;
+        this.gender = gender;
+    }
+
     public int getSportId() {
         return sportId;
     }

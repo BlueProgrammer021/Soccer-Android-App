@@ -7,7 +7,7 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "athletes",
-        indices = {@Index(value = {"aid"}, unique = true), @Index(value = {"sid"}, unique = true)},
+        indices = {@Index(value = {"aid"}, unique = true), @Index(value = {"sid"})},
         foreignKeys = {@ForeignKey(entity = Sports.class, parentColumns = "sid", childColumns = "sid", onDelete = 5)})
 public class Athletes
 {

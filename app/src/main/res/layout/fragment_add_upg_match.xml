@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.matches.addUpgMatchFragment">
+
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="254dp"
+        android:layout_height="447dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/match_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/match_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="date"
+                android:focusable="false"/>
+
+            <Spinner
+                android:id="@+id/match_town"
+                android:layout_width="match_parent"
+                android:layout_height="47dp" />
+
+            <Spinner
+                android:id="@+id/match_country"
+                android:layout_width="match_parent"
+                android:layout_height="47dp" />
+
+            <Spinner
+                android:id="@+id/match_sport"
+                android:layout_width="match_parent"
+                android:layout_height="47dp" />
+
+            <RadioGroup
+                android:id="@+id/match_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/match_radio_single"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/match_radio_single" />
+
+                <RadioButton
+                    android:id="@+id/match_radio_teams"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/match_radio_teams" />
+
+            </RadioGroup>
+
+            <Spinner
+                android:id="@+id/match_athlete1"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <EditText
+                android:id="@+id/match_athlete1_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/match_athlete1_score"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+
+            <Spinner
+                android:id="@+id/match_athlete2"
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <EditText
+                android:id="@+id/match_athlete2_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/match_athlete2_score"
+                android:importantForAutofill="no"
+                android:inputType="number" />
+
+            <Button
+                android:id="@+id/match_add_athlete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/match_add_athlete" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_cnl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
+        android:text="@string/btn_cnl"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_cnl"
+        app:layout_constraintHorizontal_bias="0.323"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintVertical_bias="0.51" />
+</androidx.constraintlayout.widget.ConstraintLayout>

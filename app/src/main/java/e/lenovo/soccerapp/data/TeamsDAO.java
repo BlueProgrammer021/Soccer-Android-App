@@ -12,6 +12,8 @@ public interface TeamsDAO
 {
     @Query("SELECT * FROM teams WHERE tid = :searchId")
     public List<Teams> searchById(int searchId);
+    @Query("SELECT team_country FROM teams")
+    public List<String> getTcountry();
     @Insert
     public void insertTeam(Teams team);
     @Update

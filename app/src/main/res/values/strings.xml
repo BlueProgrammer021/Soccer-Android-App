@@ -58,6 +58,18 @@
     <string name="team_name">Team Name</string>
     <string name="team_arena">Team Arena</string>
     <string name="team_town">Team Town</string>
+    <string name="match_radio_single">Single</string>
+    <string name="match_radio_teams">Teams</string>
+    <string name="match_athlete2_score">Score</string>
+    <string name="match_athlete1_score">Score</string>
+    <string name="match_add_athlete">Add Athlete</string>
+    <string name="match_add">Add Match</string>
+    <string name="match_update">Update Match</string>
+    <string name="match_delete">Delete Match</string>
+    <string name="sports_id">SPORT_ID</string>
+    <string name="sports_gender">SPORT_GENDER</string>
+    <string name="sports_category">SPORT_CATEGORY</string>
+    <string name="sports_name">SPORT_NAME</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="genders">
         <item name="male" type="string">Male</item>

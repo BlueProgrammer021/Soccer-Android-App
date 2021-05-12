@@ -13,14 +13,14 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.room.Room;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import e.lenovo.soccerapp.data.AppDatabase;
 
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    public static AppDatabase INSTANCE;
-    private static final String DB_NAME = "MyDb";
+    public static FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,11 +39,9 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-        // Room DB Builder
-        INSTANCE = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, DB_NAME)
-                .allowMainThreadQueries()
-                .fallbackToDestructiveMigration()
-                .build();
+
+        // Firebase
+        db = FirebaseFirestore.getInstance();
     }
 
     @Override

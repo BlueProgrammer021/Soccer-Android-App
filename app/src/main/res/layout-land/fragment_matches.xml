@@ -10,45 +10,45 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/match_view"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="400dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.310" />
+        app:layout_constraintVertical_bias="0.100" />
 
     <Button
-        android:id="@+id/match_add"
+        android:id="@+id/btn_add_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/match_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/match_delete"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_update_match"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toEndOf="@+id/match_view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/match_delete"
+        android:id="@+id/btn_delete_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="16dp"
         android:text="@string/match_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintStart_toEndOf="@+id/match_view" />
 
     <Button
-        android:id="@+id/match_update"
+        android:id="@+id/btn_update_match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/match_update"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete_match"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.866" />
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toEndOf="@+id/match_view" />
 </androidx.constraintlayout.widget.ConstraintLayout>
