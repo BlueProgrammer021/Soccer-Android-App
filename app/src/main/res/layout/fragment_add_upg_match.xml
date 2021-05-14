@@ -27,20 +27,29 @@
                 android:id="@+id/match_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/matches_date"
                 android:ems="10"
                 android:importantForAutofill="no"
                 android:inputType="date"
                 android:focusable="false"/>
 
-            <Spinner
+            <EditText
                 android:id="@+id/match_town"
                 android:layout_width="match_parent"
-                android:layout_height="47dp" />
+                android:layout_height="wrap_content"
+                android:hint="@string/matchs_town"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text"/>
 
-            <Spinner
+            <EditText
                 android:id="@+id/match_country"
                 android:layout_width="match_parent"
-                android:layout_height="47dp" />
+                android:layout_height="wrap_content"
+                android:hint="@string/matches_country"
+                android:ems="10"
+                android:importantForAutofill="no"
+                android:inputType="text" />
 
             <Spinner
                 android:id="@+id/match_sport"

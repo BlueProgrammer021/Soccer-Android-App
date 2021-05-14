@@ -21,7 +21,7 @@
     <string name="btn_update_athlete">Update Athlete</string>
     <string name="btn_view_athletes">View Athletes</string>
     <string name="here_you_can_add_delete_or_update_n_details_of_an_athlete">Here you can add, delete or update \n details of an athlete</string>
-    <string name="logs">Log History</string>
+    <string name="welcome_msg">Welcome to DemoApp</string>
     <string name="menu_matches">Matches</string>
     <string name="text_matches">Hello</string>
     <string name="menu_more">More</string>
@@ -70,10 +70,39 @@
     <string name="sports_gender">SPORT_GENDER</string>
     <string name="sports_category">SPORT_CATEGORY</string>
     <string name="sports_name">SPORT_NAME</string>
+    <string name="about_desc">Demo App</string>
+    <string name="about_name1">Arqile Damo</string>
+    <string name="about_name2">Vladislavos Paraskevopoulos</string>
+    <string name="about_name3">Dimitris Roumpos</string>
+    <string name="athletes_id">ATHLETE_ID</string>
+    <string name="athletes_fname">ATHLETE_FIRST_NAME</string>
+    <string name="athletes_lname">ATHLETE_LAST_NAME</string>
+    <string name="athletes_sport_id">SPORT_ID</string>
+    <string name="athletes_town">ATHLETE_TOWN</string>
+    <string name="athletes_country">ATHLETE_COUNTRY</string>
+    <string name="matchs_town">Match Town</string>
+    <string name="matches_country">Match Country</string>
+    <string name="matches_date">Match Date</string>
+    <string name="teams_id">TEAM_ID</string>
+    <string name="teams_name">TEAM_NAME</string>
+    <string name="teams_arena">TEAM_ARENA</string>
+    <string name="teams_court">TEAM_COURT</string>
+    <string name="teams_country">TEAM_COUNTRY</string>
+    <string name="teams_sport_id">TEAM_SPORT_ID</string>
+    <string name="teams_est">TEAM_EST</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="genders">
         <item name="male" type="string">Male</item>
         <item name="female" type="string">Female</item>
+    </string-array>
+
+    <string-array name="moreAth">
+        <item name="athlete3" type="string">athlete3</item>
+        <item name="athlete4" type="string">athlete4</item>
+        <item name="athlete5" type="string">athlete5</item>
+        <item name="athlete6" type="string">athlete6</item>
+        <item name="athlete7" type="string">athlete7</item>
+        <item name="athlete8" type="string">athlete8</item>
     </string-array>
 
 </resources>

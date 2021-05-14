@@ -16,7 +16,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sports_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintVertical_bias="0.519"
+        android:contentDescription="@string/sport_search" />
 
     <EditText
         android:id="@+id/sport_search"
@@ -28,7 +29,8 @@
         app:layout_constraintBottom_toTopOf="@+id/sports_view"
         app:layout_constraintEnd_toStartOf="@+id/btn_search_sport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
     <Button
         android:id="@+id/btn_add_sport"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp" >
+
+    <TextView
+        android:id="@+id/teams_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:hint="@string/teams_id"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_name"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_arena"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_arena"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_court"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_court"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_country"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_sport_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_sport_id"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/teams_est"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/teams_est"
+        android:layout_marginBottom="8dp"/>
+
+</LinearLayout>

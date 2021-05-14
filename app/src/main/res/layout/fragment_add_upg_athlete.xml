@@ -83,7 +83,7 @@
         android:importantForAutofill="no" />
 
     <Spinner
-        android:id="@+id/sport_id"
+        android:id="@+id/a_sport_id"
         android:layout_width="211dp"
         android:layout_height="48dp"
         android:prompt="@string/sport_id"

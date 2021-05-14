@@ -11,13 +11,15 @@ import java.util.List;
 public interface AthletesDAO
 {
     @Query("SELECT * FROM athletes")
-    public List<Athletes> getAllAthletes();
+    List<Athletes> getAllAthletes();
     @Query("SELECT * FROM athletes WHERE aid = :searchId")
-    public List<Athletes> searchById(int searchId);
+    List<Athletes> searchById(int searchId);
+    @Query("SELECT aid FROM athletes")
+    List<Integer> getAllAid();
     @Insert
-    public void insertAthlete(Athletes athlete);
+    void insertAthlete(Athletes athlete);
     @Update
-    public void updateAthlete(Athletes athlete);
+    void updateAthlete(Athletes athlete);
     @Query("DELETE FROM athletes WHERE aid = :id")
-    public void deleteAthlete(int id);
+    void deleteAthlete(int id);
 }

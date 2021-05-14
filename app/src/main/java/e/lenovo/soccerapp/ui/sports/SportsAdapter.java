@@ -7,66 +7,73 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.RecyclerView;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
-import java.util.Objects;
 
 import e.lenovo.soccerapp.R;
 import e.lenovo.soccerapp.data.Sports;
 
 public class SportsAdapter extends RecyclerView.Adapter<SportsAdapter.ViewHolder> {
 
-    Context context;
-    LiveData<List<Sports>> mSports;
+    Context mcontext;
+    @NonNull
+    List<Sports> mSports;
+    OnSportListener mOnSportListener;
 
-    public SportsAdapter(LiveData<List<Sports>> sports) {
+    public SportsAdapter(Context cxt, @NonNull List<Sports> sports, OnSportListener onSportListener) {
+        this.mcontext = cxt;
         this.mSports = sports;
+        this.mOnSportListener = onSportListener;
     }
-
-    public void setContext(Context context) { this.context = context; }
 
     @NonNull
     @NotNull
     @Override
     public SportsAdapter.ViewHolder onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sports_row, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, mOnSportListener);
     }
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
+        @NonNull
         @NotNull
-        Sports sport = Objects.requireNonNull(mSports.getValue()).get(position);
-        holder.getSid().setText(sport.getSportId());
-        holder.getSname().setText(sport.getSportName());
-        holder.getScategory().setText(sport.getSportCategory());
-        holder.getSgender().setText(sport.getGender());
+        Sports sport = mSports.get(position);
+        holder.sid.setText(Integer.toString(sport.getSportId()));
+        holder.sname.setText(sport.getSportName());
+        holder.scategory.setText(sport.getSportCategory());
+        holder.sgender.setText(sport.getGender());
 
     }
 
     @Override
-    public int getItemCount() { if (mSports.getValue() == null) return 0; else return mSports.getValue().size(); }
+    public int getItemCount() { if (mSports != null) return mSports.size(); else return 0; }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public interface OnSportListener {
+        void onSportClick(int pos);
+    }
+
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView sid, sname, scategory, sgender;
-        public ViewHolder(View itemView) {
+        OnSportListener onSportListener;
+
+        public ViewHolder(View itemView, OnSportListener onSportListener) {
             super(itemView);
             sid = itemView.findViewById(R.id.sports_id);
             sname = itemView.findViewById(R.id.sports_name);
             scategory = itemView.findViewById(R.id.sports_category);
             sgender = itemView.findViewById(R.id.sports_gender);
+            this.onSportListener = onSportListener;
+
+            itemView.setOnClickListener(this);
         }
 
-        public TextView getSid() { return sid; }
-
-        public TextView getSname() { return sname; }
-
-        public TextView getScategory() { return scategory; }
-
-        public TextView getSgender() { return sgender; }
+        @Override
+        public void onClick(View view) {
+            onSportListener.onSportClick(getAbsoluteAdapterPosition());
+        }
     }
 }

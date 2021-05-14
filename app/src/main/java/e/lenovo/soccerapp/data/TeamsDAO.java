@@ -11,13 +11,19 @@ import java.util.List;
 public interface TeamsDAO
 {
     @Query("SELECT * FROM teams WHERE tid = :searchId")
-    public List<Teams> searchById(int searchId);
+    List<Teams> searchById(int searchId);
+    @Query("SELECT team_name FROM teams")
+    List<String> getAllTName();
+    @Query("SELECT tid FROM teams")
+    List<Integer> getAllTid();
+    @Query("SELECT * FROM teams")
+    List<Teams> getAllTeams();
     @Query("SELECT team_country FROM teams")
-    public List<String> getTcountry();
+    List<String> getTcountry();
     @Insert
-    public void insertTeam(Teams team);
+    void insertTeam(Teams team);
     @Update
-    public void updateTeam(Teams team);
+    void updateTeam(Teams team);
     @Query("DELETE FROM teams WHERE tid = :id")
-    public void deleteTeam(int id);
+    void deleteTeam(int id);
 }

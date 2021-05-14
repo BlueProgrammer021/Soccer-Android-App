@@ -2,11 +2,10 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="12dp"
-    android:id="@+id/sports_linear"
-    android:clickable="true">
+    android:id="@+id/sports_linear">
 
     <TextView
         android:id="@+id/sports_id"
@@ -20,7 +19,7 @@
         android:id="@+id/sports_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:hint="@string/sports_name"
         android:layout_marginBottom="8dp"/>
 
@@ -28,7 +27,7 @@
         android:id="@+id/sports_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:hint="@string/sports_category"
         android:layout_marginBottom="8dp"/>
 
@@ -36,7 +35,7 @@
         android:id="@+id/sports_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="14sp"
+        android:textSize="18sp"
         android:hint="@string/sports_gender"
         android:layout_marginBottom="8dp"/>
 

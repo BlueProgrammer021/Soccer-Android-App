@@ -5,8 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
@@ -18,12 +18,16 @@ import androidx.navigation.Navigation;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
 import e.lenovo.soccerapp.R;
+import e.lenovo.soccerapp.data.AppDatabase;
 
 public class addUpgMatchFragment extends Fragment {
+
+    private final int countAth = 2;
 
     final Calendar myCalendar = Calendar.getInstance();
 
@@ -54,18 +58,31 @@ public class addUpgMatchFragment extends Fragment {
         });
 
         RadioGroup matchRadio = view.findViewById(R.id.match_radio_group);
-        matchRadio.setSelected(true);
-        Spinner matchTown = view.findViewById(R.id.match_town);
-        Spinner matchCountry = view.findViewById(R.id.match_country);
+        matchRadio.check(R.id.match_radio_single);
+        EditText matchTown = view.findViewById(R.id.match_town);
+        EditText matchCountry = view.findViewById(R.id.match_country);
+        Spinner sp1 = view.findViewById(R.id.match_athlete1);
+        Spinner sp2 = view.findViewById(R.id.match_athlete2);
+        List<String> teams = AppDatabase.getInstance(getContext()).teamsDao().getAllTName();
+        List<Integer> athletes = AppDatabase.getInstance(getContext()).athletesDao().getAllAid();
+        ArrayAdapter ad1 = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, teams);
+        ArrayAdapter ad2 = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, athletes);
+        sp1.setAdapter(ad1);
+        sp2.setAdapter(ad1);
         Button addAthlete = view.findViewById(R.id.match_add_athlete);
         Button add = view.findViewById(R.id.btn_add);
         Button cnl = view.findViewById(R.id.btn_cnl);
         matchRadio.setOnCheckedChangeListener((radioGroup, i) -> {
-            if (i == R.id.match_radio_teams)
+            if (i == R.id.match_radio_teams) {
                 addAthlete.setVisibility(View.GONE);
-            else
+                sp1.setAdapter(ad1);
+                sp2.setAdapter(ad1);
+            } else {
                 addAthlete.setVisibility(View.VISIBLE);
-            // R.id.match_radio_single
+                sp1.setAdapter(ad2);
+                sp2.setAdapter(ad2);
+                // R.id.match_radio_single
+            }
         });
 
         addAthlete.setOnClickListener(v -> {
@@ -77,8 +94,7 @@ public class addUpgMatchFragment extends Fragment {
 
         add.setOnClickListener(v -> {
             Map<String, Object> match = new HashMap<>();
-
-            // HomeActivity.db
+            //Firebase add to collection
         });
 
         cnl.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_addUpgMatchFragment_to_nav_matches));

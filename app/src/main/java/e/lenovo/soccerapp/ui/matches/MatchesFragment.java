@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,8 @@ public class MatchesFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_matches, container, false);
         Button addMatch = view.findViewById(R.id.match_add);
+        Button delMatch = view.findViewById(R.id.match_delete);
+        RecyclerView mrcv = view.findViewById(R.id.match_view);
         addMatch.setOnClickListener(v -> {
             Navigation.findNavController(view).navigate(R.id.action_nav_matches_to_addUpgMatchFragment);
         });

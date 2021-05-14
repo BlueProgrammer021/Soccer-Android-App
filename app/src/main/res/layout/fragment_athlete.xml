@@ -15,7 +15,8 @@
         app:layout_constraintBottom_toTopOf="@+id/athletes_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.519" />
+        app:layout_constraintVertical_bias="0.519"
+        android:contentDescription="@string/athlete_search" />
 
     <Button
         android:id="@+id/btn_delete_athlete"
@@ -74,6 +75,7 @@
         app:layout_constraintBottom_toTopOf="@+id/athletes_view"
         app:layout_constraintEnd_toStartOf="@+id/btn_search_athlete"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
