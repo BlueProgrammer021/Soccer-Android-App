@@ -15,82 +15,84 @@
         android:text="@string/btn_cnl"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
+        app:layout_constraintTop_toBottomOf="@+id/match_scl"
         app:layout_constraintVertical_bias="0.659" />
 
     <Button
         android:id="@+id/btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
         android:text="@string/btn_add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_cnl"
-        app:layout_constraintHorizontal_bias="0.914"
+        app:layout_constraintBottom_toTopOf="@+id/btn_cnl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.948" />
+
+    <EditText
+        android:id="@+id/match_town"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="196dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="@string/matchs_town"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/match_country"
+        app:layout_constraintEnd_toStartOf="@+id/match_scl"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView3"
-        app:layout_constraintVertical_bias="0.659" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/match_country"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
-        android:hint="@string/matches_country"
+        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="@string/match_country"
         android:importantForAutofill="no"
         android:inputType="text"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="188dp"
-        android:layout_marginBottom="176dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintBottom_toTopOf="@+id/match_sport"
+        app:layout_constraintEnd_toStartOf="@+id/match_scl"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/match_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginBottom="310dp"
-        android:hint="@string/matches_date"
         android:ems="10"
         android:focusable="false"
+        android:hint="@string/match_date"
         android:importantForAutofill="no"
         android:inputType="date"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintBottom_toTopOf="@+id/match_town"
+        app:layout_constraintEnd_toStartOf="@+id/match_scl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.894" />
 
     <Spinner
         android:id="@+id/match_sport"
         android:layout_width="210dp"
         android:layout_height="45dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="246dp"
-        android:layout_marginBottom="118dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintEnd_toStartOf="@+id/match_scl"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.754" />
 
     <ScrollView
-        android:id="@+id/scrollView3"
+        android:id="@+id/match_scl"
         android:layout_width="258dp"
-        android:layout_height="281dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.642"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269">
+        app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
             android:id="@+id/match_linear"
@@ -99,27 +101,13 @@
             android:layout_marginTop="25dp"
             android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/match_radio_group"
+            <TextView
+                android:id="@+id/match_sport_cat"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/match_radio_single"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/match_radio_single" />
-
-                <RadioButton
-                    android:id="@+id/match_radio_teams"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/match_radio_teams" />
-
-            </RadioGroup>
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:hint="@string/match_sport_cat"
+                android:orientation="horizontal" />
 
             <Spinner
                 android:id="@+id/match_athlete1"
@@ -154,25 +142,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/match_add_athlete" />
+
+            <Button
+                android:id="@+id/match_remove_athlete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/match_remove_athlete"/>
+
+            <LinearLayout
+                android:id="@+id/match_dynamic_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-
-    <EditText
-        android:id="@+id/match_town"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/matchs_town"
-        android:ems="10"
-        android:inputType="text"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="245dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/scrollView3"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        android:importantForAutofill="no" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

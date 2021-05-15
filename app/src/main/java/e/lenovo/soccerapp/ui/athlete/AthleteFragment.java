@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavAction;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,16 +26,12 @@ import java.util.List;
 import e.lenovo.soccerapp.R;
 import e.lenovo.soccerapp.data.AppDatabase;
 import e.lenovo.soccerapp.data.Athletes;
-import e.lenovo.soccerapp.data.Sports;
-import e.lenovo.soccerapp.ui.sports.SportsAdapter;
-import e.lenovo.soccerapp.ui.sports.SportsFragment;
-import e.lenovo.soccerapp.ui.sports.addUpgSportFragment;
 
 public class AthleteFragment extends Fragment implements AthleteAdapter.OnAthleteListener{
 
     private AthleteViewModel athleteViewModel;
     View view;
-    int dPos;
+    int dPos = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -53,6 +50,14 @@ public class AthleteFragment extends Fragment implements AthleteAdapter.OnAthlet
 
         EditText searchId = view.findViewById(R.id.athlete_search);
         ImageButton searchBtn = view.findViewById(R.id.btn_search_athlete);
+        ImageButton locAthlete = view.findViewById(R.id.btn_location_athlete);
+
+        locAthlete.setVisibility(View.GONE);
+        /*locAthlete.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("athlete_loc", athletes.get(dPos).getAthleteTown());
+            Navigation.findNavController(view).navigate(R.id.action_nav_athletes_to_athlete_loc, bundle);
+        });*/
 
         searchId.addTextChangedListener(new TextWatcher() {
             @Override
@@ -82,12 +87,17 @@ public class AthleteFragment extends Fragment implements AthleteAdapter.OnAthlet
         addAthlete.setOnClickListener(v -> Navigation.findNavController(view).navigate(R.id.action_nav_athletes_to_addUpgAthleteFragment));
 
         delAthlete.setOnClickListener(v -> {
-            AppDatabase.getInstance(getContext()).sportsDao().deleteSport(athletes.get(dPos).getAthleteId());
-            Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            try {
+                AppDatabase.getInstance(getContext()).sportsDao().deleteSport(athletes.get(dPos).getAthleteId());
+                Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            } catch (IndexOutOfBoundsException e) {
+                Toast.makeText(getContext(), "No Item Selected", Toast.LENGTH_SHORT).show();
+            }
             adapter.notifyDataSetChanged();
             List<Athletes> re = AppDatabase.getInstance(getContext()).athletesDao().getAllAthletes();
             AthleteAdapter reA = new AthleteAdapter(getContext(), re, this);
             athleteView.setAdapter(reA);
+            dPos = -1;
         });
 
         updAthlete.setOnClickListener(v -> {

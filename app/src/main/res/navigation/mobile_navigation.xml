@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_nav_athletes_to_addUpgAthleteFragment"
             app:destination="@id/addUpgAthleteFragment" />
+        <action
+            android:id="@+id/action_nav_athletes_to_athlete_loc"
+            app:destination="@id/athlete_loc" />
     </fragment>
 
     <fragment
@@ -165,6 +168,15 @@
         <action
             android:id="@+id/action_addUpgMatchFragment_to_nav_matches"
             app:destination="@id/nav_matches" />
+    </fragment>
+    <fragment
+        android:id="@+id/athlete_loc"
+        android:name="e.lenovo.soccerapp.ui.athlete.athlete_loc"
+        android:label="fragment_athlete_loc"
+        tools:layout="@layout/fragment_athlete_loc" >
+        <action
+            android:id="@+id/action_athlete_loc_to_nav_athletes"
+            app:destination="@id/nav_athletes" />
     </fragment>
 
 </navigation>

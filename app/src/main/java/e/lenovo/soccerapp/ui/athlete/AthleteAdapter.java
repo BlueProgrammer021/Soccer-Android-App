@@ -37,7 +37,7 @@ public class AthleteAdapter extends RecyclerView.Adapter<AthleteAdapter.ViewHold
         holder.athletefName.setText(athlete.getAthleteFirstName());
         holder.athletelName.setText(athlete.getAthleteLastName());
         holder.athleteCounrty.setText(athlete.getAthleteCountry());
-        holder.athleteSid.setText(athlete.getSportId());
+        holder.athleteSid.setText(Integer.toString(athlete.getSportId()));
         holder.athleteTown.setText(athlete.getAthleteTown());
     }
 

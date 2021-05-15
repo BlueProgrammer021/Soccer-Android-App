@@ -18,6 +18,8 @@ public interface SportsDAO
     List<Integer> getAllSidSports();
     @Query("SELECT sport_name FROM sports")
     List<String> getAllSnameSports();
+    @Query("SELECT sport_category FROM sports")
+    List<String> getAllCategoriesSports();
     @Insert
     void insertSport(Sports sport);
     @Update

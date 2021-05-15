@@ -81,8 +81,8 @@
     <string name="athletes_town">ATHLETE_TOWN</string>
     <string name="athletes_country">ATHLETE_COUNTRY</string>
     <string name="matchs_town">Match Town</string>
-    <string name="matches_country">Match Country</string>
-    <string name="matches_date">Match Date</string>
+    <string name="match_country">Match Country</string>
+    <string name="match_date">Match Date</string>
     <string name="teams_id">TEAM_ID</string>
     <string name="teams_name">TEAM_NAME</string>
     <string name="teams_arena">TEAM_ARENA</string>
@@ -90,6 +90,18 @@
     <string name="teams_country">TEAM_COUNTRY</string>
     <string name="teams_sport_id">TEAM_SPORT_ID</string>
     <string name="teams_est">TEAM_EST</string>
+    <string name="matches_date">MATCH_DATE</string>
+    <string name="matches_town">MATCH_TOWN</string>
+    <string name="matches_country">MATCH_COUNTRY</string>
+    <string name="matches_sport_id">MATCH_SPORT_ID</string>
+    <string name="matches_participate1">MATCH_PARTICIPATE</string>
+    <string name="matches_participate2">MATCH_PARTICIPATE_1</string>
+    <string name="matches_single">MATCHES_TYPE_SPORT</string>
+    <string name="match_remove_athlete">Remove Athlete</string>
+    <string name="match_search">Search Match</string>
+    <string name="btn_update_match">Update Match</string>
+    <string name="match_sport_cat">Sport Category</string>
+    <string name="athlete_location">Athlete Location</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="genders">
         <item name="male" type="string">Male</item>
@@ -103,6 +115,11 @@
         <item name="athlete6" type="string">athlete6</item>
         <item name="athlete7" type="string">athlete7</item>
         <item name="athlete8" type="string">athlete8</item>
+    </string-array>
+
+    <string-array name="sport_type">
+        <item name="single" type="string">Single</item>
+        <item name="teams" type="string">Teams</item>
     </string-array>
 
 </resources>

@@ -1,10 +1,14 @@
 package e.lenovo.soccerapp.ui.team;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -13,16 +17,14 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
 import e.lenovo.soccerapp.R;
 import e.lenovo.soccerapp.data.AppDatabase;
-import e.lenovo.soccerapp.data.Athletes;
 import e.lenovo.soccerapp.data.Teams;
-import e.lenovo.soccerapp.ui.athlete.AthleteAdapter;
-import e.lenovo.soccerapp.ui.athlete.addUpgAthleteFragment;
 
 public class TeamFragment extends Fragment implements TeamAdapter.OnTeamListener {
 
@@ -40,8 +42,37 @@ public class TeamFragment extends Fragment implements TeamAdapter.OnTeamListener
         Button del = view.findViewById(R.id.btn_delete_team);
         List<Teams> teamsList = AppDatabase.getInstance(getContext()).teamsDao().getAllTeams();
         TeamAdapter ada = new TeamAdapter(getContext(), teamsList, this);
+        trc.setLayoutManager(new LinearLayoutManager(getContext()));
         trc.setAdapter(ada);
         trc.addItemDecoration(new DividerItemDecoration(trc.getContext(), DividerItemDecoration.VERTICAL));
+
+        EditText searchId = view.findViewById(R.id.team_search);
+        ImageButton searchBtn = view.findViewById(R.id.btn_search_team);
+
+        searchId.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                List<Teams> searchedById = AppDatabase.getInstance(getContext()).teamsDao().getAllTeams();
+                TeamAdapter searchedA = new TeamAdapter(getContext(), searchedById, TeamFragment.this::onTeamClick);
+                trc.setAdapter(searchedA);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        searchBtn.setOnClickListener(v -> {
+            List<Teams> searchedById = AppDatabase.getInstance(getContext()).teamsDao().searchById(Integer.parseInt(searchId.getText().toString()));
+            TeamAdapter searchedA = new TeamAdapter(getContext(), searchedById, this);
+            trc.setAdapter(searchedA);
+        });
 
         add.setOnClickListener(v -> Navigation.findNavController(v).navigate(R.id.action_nav_teams_to_addUpgTeamFragment));
 
@@ -55,12 +86,17 @@ public class TeamFragment extends Fragment implements TeamAdapter.OnTeamListener
         });
 
         del.setOnClickListener(v -> {
-            AppDatabase.getInstance(getContext()).teamsDao().deleteTeam(teamsList.get(dPos).getTeamId());
-            Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            try {
+                AppDatabase.getInstance(getContext()).teamsDao().deleteTeam(teamsList.get(dPos).getTeamId());
+                Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            } catch (IndexOutOfBoundsException e) {
+                Toast.makeText(getContext(), "No Item Selected", Toast.LENGTH_SHORT).show();
+            }
             ada.notifyDataSetChanged();
             List<Teams> re = AppDatabase.getInstance(getContext()).teamsDao().getAllTeams();
             TeamAdapter reA = new TeamAdapter(getContext(), re, this);
             trc.setAdapter(reA);
+            dPos = -1;
         });
         return view;
     }

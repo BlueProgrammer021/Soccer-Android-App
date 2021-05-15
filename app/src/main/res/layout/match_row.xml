@@ -7,57 +7,59 @@
     android:padding="12dp">
 
     <TextView
-        android:id="@+id/athletes_id"
+        android:id="@+id/matches_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="22sp"
-        android:hint="@string/athletes_id"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_date"
+        android:paddingBottom="8dp"/>
 
     <TextView
-        android:id="@+id/athletes_fname"
+        android:id="@+id/matches_town"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:hint="@string/athletes_fname"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_town"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/athletes_lname"
+        android:id="@+id/matches_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:hint="@string/athletes_lname"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_country"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/athletes_town"
+        android:id="@+id/matches_sport_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:hint="@string/athletes_town"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_sport_id"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/athletes_country"
+        android:id="@+id/matches_type_sport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:hint="@string/athletes_country"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_single"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/athletes_sport_id"
+        android:id="@+id/matches_participate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:hint="@string/athletes_sport_id"
-        android:layout_marginBottom="8dp"
-        />
+        android:hint="@string/matches_participate1"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/matches_participate_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:hint="@string/matches_participate2"
+        android:layout_marginBottom="8dp"/>
 
 </LinearLayout>

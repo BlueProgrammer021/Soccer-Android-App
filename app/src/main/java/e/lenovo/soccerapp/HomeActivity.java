@@ -1,5 +1,6 @@
 package e.lenovo.soccerapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.Menu;
 
@@ -14,12 +15,14 @@ import androidx.room.Room;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirestoreRegistrar;
 
 import e.lenovo.soccerapp.data.AppDatabase;
 
 public class HomeActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    @SuppressLint("StaticFieldLeak")
     public static FirebaseFirestore db;
 
     @Override
@@ -34,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_athletes, R.id.nav_teams, R.id.nav_sports,R.id.nav_matches, R.id.nav_about)
-                .setDrawerLayout(drawer)
+                .setOpenableLayout(drawer) // setDrawerLayout is deprecated
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
@@ -42,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
 
         // Firebase
         db = FirebaseFirestore.getInstance();
+
     }
 
     @Override

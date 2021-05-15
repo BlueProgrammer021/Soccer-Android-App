@@ -90,12 +90,17 @@ public class SportsFragment extends Fragment implements SportsAdapter.OnSportLis
         });
 
         del.setOnClickListener(v -> {
-            AppDatabase.getInstance(getContext()).sportsDao().deleteSport(sports.get(dPos).getSportId());
-            Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            try {
+                AppDatabase.getInstance(getContext()).sportsDao().deleteSport(sports.get(dPos).getSportId());
+                Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
+            } catch (IndexOutOfBoundsException e) {
+                Toast.makeText(getContext(), "No Item Selected", Toast.LENGTH_SHORT).show();
+            }
             adapter.notifyDataSetChanged();
             List<Sports> re = AppDatabase.getInstance(getContext()).sportsDao().getAllSports();
             SportsAdapter reA = new SportsAdapter(getContext(), re, this);
             sportList.setAdapter(reA);
+            dPos = -1;
         });
 
         return view;

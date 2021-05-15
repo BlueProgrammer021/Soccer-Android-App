@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.matches.MatchesFragment">
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/match_view"
         android:layout_width="match_parent"
@@ -40,5 +39,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.771" />
+
+    <Button
+        android:id="@+id/match_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_update_match"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

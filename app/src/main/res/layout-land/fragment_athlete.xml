@@ -6,19 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.athlete.AthleteFragment">
 
-    <ImageButton
-        android:id="@+id/btn_search_athlete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_search"
-        app:layout_constraintBottom_toTopOf="@+id/btn_add_athlete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/athlete_search"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.581" />
-
     <Button
         android:id="@+id/btn_delete_athlete"
         android:layout_width="wrap_content"
@@ -53,6 +40,50 @@
         app:layout_constraintHorizontal_bias="0.918"
         app:layout_constraintStart_toEndOf="@+id/athletes_view" />
 
+    <EditText
+        android:id="@+id/athlete_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="10"
+        android:hint="@string/athlete_search"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_athlete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toEndOf="@+id/athletes_view"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
+
+    <ImageButton
+        android:id="@+id/btn_location_athlete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/athlete_location"
+        android:src="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_delete_athlete"
+        app:layout_constraintHorizontal_bias="0.355"
+        app:layout_constraintStart_toEndOf="@+id/athletes_view"
+        app:layout_constraintTop_toBottomOf="@+id/athlete_search"
+        app:layout_constraintVertical_bias="0.973" />
+
+    <ImageButton
+        android:id="@+id/btn_search_athlete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/athlete_search"
+        android:src="@drawable/ic_search"
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_athlete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/athlete_search"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.581" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/athletes_view"
         android:layout_width="400dp"
@@ -63,20 +94,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
-    <EditText
-        android:id="@+id/athlete_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:ems="10"
-        android:inputType="number"
-        android:hint="@string/athlete_search"
-        app:layout_constraintBottom_toTopOf="@+id/btn_add_athlete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toEndOf="@+id/athletes_view"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.576" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

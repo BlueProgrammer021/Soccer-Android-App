@@ -6,9 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.matches.MatchesFragment">
 
+    <Button
+        android:id="@+id/match_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/match_update"
+        app:layout_constraintBottom_toTopOf="@+id/match_delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toEndOf="@+id/match_view" />
 
     <Button
-        android:id="@+id/btn_delete_match"
+        android:id="@+id/match_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
@@ -23,12 +32,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/match_add"
-        app:layout_constraintBottom_toTopOf="@+id/btn_delete_match"
+        app:layout_constraintBottom_toTopOf="@+id/match_update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.923"
         app:layout_constraintStart_toEndOf="@+id/match_view"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+        app:layout_constraintVertical_bias="1" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/match_view"

@@ -57,19 +57,23 @@ public class addUpgTeamFragment extends Fragment {
         Button can = view.findViewById(R.id.btn_cnl);
 
         if (mode.equals("Upd")) {
-            List<Teams> teams = AppDatabase.getInstance(getContext()).teamsDao().getAllTeams();
-            Teams tU = teams.get(pos);
-            tid.setText(String.valueOf(tU.getTeamId()));
-            tname.setText(tU.getTeamName());
-            tarena.setText(tU.getTeamArena());
-            tcourt.setText(tU.getTeamCourt());
-            tcountry.setText(tU.getTeamCountry());
-            int s = tU.getSportId();
-            for (int i=0; i<sportId.getCount(); i++) {
-                if (sportId.getItemAtPosition(i).equals(s))
-                    sportId.setSelection(i);
+            try {
+                List<Teams> teams = AppDatabase.getInstance(getContext()).teamsDao().getAllTeams();
+                Teams tU = teams.get(pos);
+                tid.setText(String.valueOf(tU.getTeamId()));
+                tname.setText(tU.getTeamName());
+                tarena.setText(tU.getTeamArena());
+                tcourt.setText(tU.getTeamCourt());
+                tcountry.setText(tU.getTeamCountry());
+                int s = tU.getSportId();
+                for (int i=0; i<sportId.getCount(); i++) {
+                    if (sportId.getItemAtPosition(i).equals(s))
+                        sportId.setSelection(i);
+                }
+                test.setText(tU.getTeamEst());
+            } catch (IndexOutOfBoundsException e) {
+                Toast.makeText(getActivity(), "No Item Selected", Toast.LENGTH_SHORT).show();
             }
-            test.setText(tU.getTeamEst());
         }
 
         String finalMode = mode;
@@ -86,13 +90,14 @@ public class addUpgTeamFragment extends Fragment {
                     te.setTeamCourt(tcourt.getText().toString());
                     te.setTeamCountry(tcountry.getText().toString());
                     te.setTeamEst(test.getText().toString());
+                    te.setSportId(Integer.parseInt(sportId.getSelectedItem().toString()));
                     if (AppDatabase.getInstance(getContext()).teamsDao().getAllTid().contains(te.getTeamId()) &&
                     finalMode.equals("Upd"))
                         AppDatabase.getInstance(getContext()).teamsDao().updateTeam(te);
                     else
                         AppDatabase.getInstance(getContext()).teamsDao().insertTeam(te);
                 } catch (Exception e) {
-                    Toast.makeText(getActivity(), "PK - Already Added Id", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "PK - Already Added Id", Toast.LENGTH_LONG).show();
                 } finally {
                     tid.clearFocus();
                     tid.setText("");

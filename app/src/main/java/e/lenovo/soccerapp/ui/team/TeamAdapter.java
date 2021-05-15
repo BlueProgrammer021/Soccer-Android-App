@@ -45,12 +45,12 @@ public class TeamAdapter extends RecyclerView.Adapter<TeamAdapter.ViewHolder> {
         holder.teamArena.setText(team.getTeamArena());
         holder.teamCourt.setText(team.getTeamCourt());
         holder.teamCountry.setText(team.getTeamCountry());
-        holder.teamSportId.setText(team.getSportId());
+        holder.teamSportId.setText(Integer.toString(team.getSportId()));
         holder.teamEst.setText(team.getTeamEst());
     }
 
     @Override
-    public int getItemCount() { return 0; }
+    public int getItemCount() { if (mTeams.size() != 0) return mTeams.size(); else return 0; }
 
     public interface OnTeamListener {
         void onTeamClick(int pos);
