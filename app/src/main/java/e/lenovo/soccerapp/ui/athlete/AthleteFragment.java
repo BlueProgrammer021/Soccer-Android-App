@@ -88,7 +88,7 @@ public class AthleteFragment extends Fragment implements AthleteAdapter.OnAthlet
 
         delAthlete.setOnClickListener(v -> {
             try {
-                AppDatabase.getInstance(getContext()).sportsDao().deleteSport(athletes.get(dPos).getAthleteId());
+                AppDatabase.getInstance(getContext()).athletesDao().deleteAthlete(athletes.get(dPos).getAthleteId());
                 Toast.makeText(getContext(), "Successfully Deleted", Toast.LENGTH_SHORT).show();
             } catch (IndexOutOfBoundsException e) {
                 Toast.makeText(getContext(), "No Item Selected", Toast.LENGTH_SHORT).show();

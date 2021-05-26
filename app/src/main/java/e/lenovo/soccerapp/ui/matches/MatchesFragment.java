@@ -76,6 +76,15 @@ public class MatchesFragment extends Fragment  implements MatchesAdapter.OnMatch
             db.collection("matches").document(ada.getItem(dPos).getMatch_id()).delete();
             Toast.makeText(getContext(), "Document successfully deleted", Toast.LENGTH_SHORT).show();
             ada.notifyDataSetChanged();
+            // Refresh Recycler
+            matches = db.collection("matches");
+            opt = new FirestoreRecyclerOptions.Builder<Matches>()
+                    .setQuery(matches, Matches.class)
+                    .build();
+            ada = new MatchesAdapter(getContext(), opt, this);
+            mrcv.setHasFixedSize(true);
+            mrcv.setLayoutManager(new LinearLayoutManager(getContext()));
+            mrcv.setAdapter(ada);
             /*db.collection("matches")
                     .document(did.get(dPos))
                     .delete();

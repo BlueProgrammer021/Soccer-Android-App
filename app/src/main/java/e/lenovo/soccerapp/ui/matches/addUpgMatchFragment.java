@@ -29,6 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 import e.lenovo.soccerapp.HomeActivity;
 import e.lenovo.soccerapp.R;
@@ -111,6 +112,10 @@ public class addUpgMatchFragment extends Fragment {
                 if (sports.get(0).getSportCategory().equals("Single")) {
                     sportCat.setText("Single");
                     addAthlete.setVisibility(View.VISIBLE);
+                    LinearLayout lout = (LinearLayout) view.findViewById(R.id.match_dynamic_linear);
+                    if (lout != null)
+                        lout.removeAllViewsInLayout();
+
                     sp1.setAdapter(ad2);
                     sp2.setAdapter(ad2);
                     countAth = 2;
@@ -120,7 +125,9 @@ public class addUpgMatchFragment extends Fragment {
                     addAthlete.setVisibility(View.GONE);
                     remAthlete.setVisibility(View.GONE);
                     LinearLayout lout = (LinearLayout) view.findViewById(R.id.match_dynamic_linear);
-                    lout.removeAllViewsInLayout();
+                    if (lout != null)
+                        lout.removeAllViewsInLayout();
+
                     countAth = 2;
                     sp1.setAdapter(ad1);
                     sp2.setAdapter(ad1);
